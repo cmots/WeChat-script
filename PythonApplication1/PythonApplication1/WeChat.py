@@ -1,3 +1,6 @@
+import sys
+reload(sys)
+sys.setdefaultcoding("utf-8")
 #-*-coding:utf-8 -*
 import itchat,re
 import math
