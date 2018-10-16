@@ -1,5 +1,7 @@
 #-*-coding:utf-8 -*
 import itchat,re
+import math
+import random
 import requests
 from itchat.content import *
 def get_tuling_response(_info):
@@ -18,9 +20,11 @@ def text_reply(msg):
     match = re.search("(.*)",msg["Text"]).span()    
     if match: 
         content=msg['Content']
+        #print(msg['FromUserName']);
         returnContent=get_tuling_response(content)
         if msg["FromUserName"]==itchat.search_friends(name='Destiny')[0]['UserName']:
-            itchat.send((returnContent)+"【有急事要发短信哟】",msg["FromUserName"])
+            sentense=["乖","要乖乖哦","有急事要发短信哦","爱你","么么哒"]
+            itchat.send((returnContent)+"【"+sentense[random.randint(0,4)]+"】",msg["FromUserName"])
         else:
             itchat.send((returnContent)+"【自动回复不代表本人观点】",msg["FromUserName"])
 
