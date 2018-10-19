@@ -25,7 +25,7 @@ def text_reply(msg):
         #print(msg['FromUserName']);
         returnContent=get_tuling_response(content)
         if msg["FromUserName"]==itchat.search_friends(name='Destiny')[0]['UserName']:
-            sentense=["乖","要乖乖哦","有急事要发短信哦","爱你","么么哒"]
+            sentense=[" "," "," "," "," "]
             itchat.send((returnContent)+"【"+sentense[random.randint(0,4)]+"】",msg["FromUserName"])
         else:
             itchat.send((returnContent)+"【自动回复不代表本人观点】",msg["FromUserName"])
@@ -36,9 +36,9 @@ def other_reply(msg):
     returnContent=get_tuling_response(content)
     if msg["FromUserName"]==itchat.search_friends(name='Destiny')[0]['UserName']:
         itchat.send((returnContent),msg["FromUserName"])
-        itchat.send(("嘿嘿"),msg["FromUserName"])
+        itchat.send(("。"),msg["FromUserName"])
     else:
-         itchat.send((returnContent)+"【傻子AI不识别文本外数据】",msg["FromUserName"])
+         itchat.send((returnContent)+"【 】",msg["FromUserName"])
  
 if __name__ == "__main__":    
     itchat.auto_login(enableCmdQR=2)
