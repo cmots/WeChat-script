@@ -1,9 +1,8 @@
-import sys
-reload(sys)
-sys.setdefaultcoding("utf-8")
-#-*-coding:utf-8 -*
+#-*-coding:utf-8 -*-
+import sys  
+reload(sys)  
+sys.setdefaultencoding('utf8')
 import itchat,re
-import math
 import random
 import requests
 from itchat.content import *
@@ -42,5 +41,5 @@ def other_reply(msg):
          itchat.send((returnContent)+"【傻子AI不识别文本外数据】",msg["FromUserName"])
  
 if __name__ == "__main__":    
-    itchat.auto_login(enableCmdQR=True,hotReload=True)
+    itchat.auto_login(enableCmdQR=2)
     itchat.run()
